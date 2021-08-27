@@ -1,7 +1,19 @@
+@font-face {
+	font-family: "Nahid";
+	src: url("../../Resources/fonts/Nahid-FD.eot");
+	src: url("../../Resources/fonts/Nahid-FD.eot?#iefix") format("embedded-opentype");
+	src: url("../../Resources/fonts/Nahid-FD.woff") format("woff");
+	src: url("../../Resources/fonts/Nahid-FD.ttf") format("truetype");
+	font-weight: normal;
+}
+
 body {
     margin:0;
     padding:0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Nahid', sans-serif;
+    direction: rtl;
+    color: #222;
+    font-size: 13px;
 }
 
 a {
@@ -24,9 +36,39 @@ a {
 .img_cover {
     background-size: cover !important;
 }
+
 .container {
-    width:1024px;
+    width:40%;
     margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+    .container {
+        width:90%;
+    }
+}
+
+.gray_text{
+    color:#999;
+}
+
+.header_login{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+
+.text_login{
+    font-size: .9rem;
+    padding: 0;
+    margin: 0;
+    padding: 1rem 0;
+}
+
+.title_login{
+    width: 70%;
+    text-align: right;
 }
 
 input {
@@ -51,9 +93,10 @@ select {
 
 
 button {
-    background: #0d1831;
+    font-family: 'Nahid', sans-serif;
+    background: #FFB21A;
     color: #ffffff;
-    border: 1px solid #0d1831;
+    border: 1px solid #FFB21A;
     padding: 5px 10px;
     margin-top: 10px;
     font-size: 15px;
@@ -141,32 +184,26 @@ button {
 ===============================*/
 
 .signin_wrapper {
-    margin-top: 96px;
-    padding: 20px;
-    min-height: 70VH;
-    text-align: center;
+    display: flex;
+    height:100vh; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: url('../../Resources/icons/Path\ 1.svg') no-repeat;
 }
 
-.signin_wrapper form {
-    width: 350px;
-    margin: 0 auto;
+.logo_wrapper{
+    width: 100%;
+    display: flex;
+    margin: 0 0 1rem 0;
+}
+
+.logo_wrapper img{
+    margin-right:auto ;
 }
 
 .signin_wrapper form button {
     width: 100%;
     padding: 10px;
-}
-
-.signin_wrapper h2 {
-    font-family: 'Righteous', cursive;
-    color: #98c6e9;
-    font-size: 50px;
-}
-
-.user_dashboard {
-    font-size: 60px;
-    font-family: 'Righteous', cursive;
-    color: #d5ebfe;
-    text-align: center;
-    margin-top: 200px;
 }

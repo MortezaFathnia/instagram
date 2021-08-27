@@ -3,6 +3,9 @@ import firebase from 'firebase';
 
 import FormFields from '../ui/formFields';
 import { validate } from '../ui/misc';
+
+import Icon from '../../Resources/icons/logo.png';
+
 export class SignIn extends Component {
 
     state = {
@@ -94,11 +97,16 @@ export class SignIn extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="signin_wrapper" style={{ margin: '100px' }}>
+            <div className="signin_wrapper">
+                <div className="container">
+                    <div className="logo_wrapper">
+                        <img src={Icon} alt="Logo" />
+                    </div>
                     <form onSubmit={(event) => this.submitForm(event)}>
-                        <h2>Please Login</h2>
-
+                        <div className="title_login">
+                            <h5 className="header_login">با این شماره قبلا ثبت نام کردی!</h5>
+                            <p className="text_login gray_text">برای وارد شدن نام کاربری و رمز عبورت رو بنویس.</p>
+                        </div>
                         <FormFields
                             id={'email'}
                             formData={this.state.formData.email}
@@ -111,10 +119,10 @@ export class SignIn extends Component {
                             change={(element) => this.updateForm(element)}
                         />
                         {this.state.formError ?
-                            <div className="error_label">Something is wrong, please try again.</div>
+                            <div className="error_label">متاسفانه مشکلی پیش آمده است، لطفا مجددا تلاش کنید</div>
                             : null
                         }
-                        <button onClick={(event) => this.submitForm(event)}>Log in</button>
+                        <button onClick={(event) => this.submitForm(event)}>ورود</button>
                     </form>
                 </div>
             </div>
